@@ -1,13 +1,28 @@
 package se.citerus.dddsample.domain.model.voyage;
 
-import static se.citerus.dddsample.application.util.DateTestUtil.toDate;
-
 import se.citerus.dddsample.domain.model.location.Location;
 
-import static se.citerus.dddsample.domain.model.location.SampleLocations.*;
-
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static se.citerus.dddsample.application.util.DateTestUtil.toDate;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.CHICAGO;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.DALLAS;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.HAMBURG;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.HANGZOU;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.HELSINKI;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.HONGKONG;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.MELBOURNE;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.NEWYORK;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.ROTTERDAM;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.SHANGHAI;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.STOCKHOLM;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.TOKYO;
 
 /**
  * Sample carrier movements, for test purposes.

@@ -7,20 +7,20 @@ import se.citerus.dddsample.domain.model.cargo.TrackingId;
  */
 public final class UnknownCargoException extends CannotCreateHandlingEventException {
 
-  private final TrackingId trackingId;
+    private final TrackingId trackingId;
 
-  /**
-   * @param trackingId cargo tracking id
-   */
-  public UnknownCargoException(final TrackingId trackingId) {
-    this.trackingId = trackingId;
-  }
+    /**
+     * @param trackingId cargo tracking id
+     */
+    public UnknownCargoException(final TrackingId trackingId) {
+        this.trackingId = trackingId;
+    }
 
-  /**
-   * {@inheritDoc}
-   */            
-  @Override
-  public String getMessage() {
-    return "No cargo with tracking id " + trackingId.idString() + " exists in the system";
-  }
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getMessage() {
+        return "No cargo with tracking id " + trackingId.idString() + " exists in the system";
+    }
 }

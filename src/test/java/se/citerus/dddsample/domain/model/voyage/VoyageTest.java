@@ -1,8 +1,7 @@
 package se.citerus.dddsample.domain.model.voyage;
 
-import org.junit.Test;
-
 import junit.framework.TestCase;
+import org.junit.Test;
 
 public class VoyageTest extends TestCase {
 

@@ -12,9 +12,9 @@ import java.util.List;
 
 /**
  * <p>Java class for handlingReport complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="handlingReport">
  *   &lt;complexContent>
@@ -30,16 +30,14 @@ import java.util.List;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "handlingReport", propOrder = {
-    "completionTime",
-    "trackingIds",
-    "type",
-    "unLocode",
-    "voyageNumber"
+        "completionTime",
+        "trackingIds",
+        "type",
+        "unLocode",
+        "voyageNumber"
 })
 public class HandlingReport {
 
@@ -55,11 +53,9 @@ public class HandlingReport {
 
     /**
      * Gets the value of the completionTime property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getCompletionTime() {
         return completionTime;
@@ -67,11 +63,9 @@ public class HandlingReport {
 
     /**
      * Sets the value of the completionTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setCompletionTime(XMLGregorianCalendar value) {
         this.completionTime = value;
@@ -79,25 +73,23 @@ public class HandlingReport {
 
     /**
      * Gets the value of the trackingIds property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the trackingIds property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getTrackingIds().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * 
-     * 
      */
     public List<String> getTrackingIds() {
         if (trackingIds == null) {
@@ -108,11 +100,9 @@ public class HandlingReport {
 
     /**
      * Gets the value of the type property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getType() {
         return type;
@@ -120,11 +110,9 @@ public class HandlingReport {
 
     /**
      * Sets the value of the type property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setType(String value) {
         this.type = value;
@@ -132,11 +120,9 @@ public class HandlingReport {
 
     /**
      * Gets the value of the unLocode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getUnLocode() {
         return unLocode;
@@ -144,11 +130,9 @@ public class HandlingReport {
 
     /**
      * Sets the value of the unLocode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setUnLocode(String value) {
         this.unLocode = value;
@@ -156,11 +140,9 @@ public class HandlingReport {
 
     /**
      * Gets the value of the voyageNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getVoyageNumber() {
         return voyageNumber;
@@ -168,11 +150,9 @@ public class HandlingReport {
 
     /**
      * Sets the value of the voyageNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setVoyageNumber(String value) {
         this.voyageNumber = value;

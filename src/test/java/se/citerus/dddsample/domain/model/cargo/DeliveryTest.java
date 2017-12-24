@@ -1,21 +1,21 @@
 package se.citerus.dddsample.domain.model.cargo;
 
+import org.junit.Test;
+
+import java.util.Date;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static se.citerus.dddsample.domain.model.location.SampleLocations.HONGKONG;
 import static se.citerus.dddsample.domain.model.location.SampleLocations.NEWYORK;
 
-import java.util.Date;
-
-import org.junit.Test;
-
 public class DeliveryTest {
 
-  private Cargo cargo = new Cargo(new TrackingId("XYZ"), new RouteSpecification(HONGKONG, NEWYORK, new Date()));
+    private Cargo cargo = new Cargo(new TrackingId("XYZ"), new RouteSpecification(HONGKONG, NEWYORK, new Date()));
 
-  @Test
-  public void testToSilenceWarnings() {
-    assertThat(true).isTrue();
-  }
+    @Test
+    public void testToSilenceWarnings() {
+        assertThat(true).isTrue();
+    }
   
   /*
   public void testEvensOrderedByTimeOccured() throws Exception {
@@ -71,5 +71,5 @@ public class DeliveryTest {
     assertThat(delivery.lastKnownLocation()).isEqualTo(HAMBURG);
   }
   */
-  
+
 }

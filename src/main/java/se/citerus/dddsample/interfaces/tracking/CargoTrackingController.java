@@ -47,9 +47,9 @@ public final class CargoTrackingController {
 
     @RequestMapping(method = RequestMethod.POST)
     protected String onSubmit(final HttpServletRequest request,
-                                                             final TrackCommand command,
-                                                             final Map<String, Object> model,
-                                                             final BindingResult bindingResult) {
+                              final TrackCommand command,
+                              final Map<String, Object> model,
+                              final BindingResult bindingResult) {
         new TrackCommandValidator().validate(command, bindingResult);
 
         final TrackingId trackingId = new TrackingId(command.getTrackingId());

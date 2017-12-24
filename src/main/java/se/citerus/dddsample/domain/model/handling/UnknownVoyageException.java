@@ -7,14 +7,14 @@ import se.citerus.dddsample.domain.model.voyage.VoyageNumber;
  */
 public class UnknownVoyageException extends CannotCreateHandlingEventException {
 
-  private final VoyageNumber voyageNumber;
+    private final VoyageNumber voyageNumber;
 
-  public UnknownVoyageException(VoyageNumber voyageNumber) {
-    this.voyageNumber = voyageNumber;
-  }
+    public UnknownVoyageException(VoyageNumber voyageNumber) {
+        this.voyageNumber = voyageNumber;
+    }
 
-  @Override
-  public String getMessage() {
-    return "No voyage with number " + voyageNumber.idString() + " exists in the system";
-  }
+    @Override
+    public String getMessage() {
+        return "No voyage with number " + voyageNumber.idString() + " exists in the system";
+    }
 }

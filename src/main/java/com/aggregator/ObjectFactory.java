@@ -8,18 +8,17 @@ import javax.xml.namespace.QName;
 
 
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the com.aggregator package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
+ * This object contains factory methods for each
+ * Java content interface and Java element interface
+ * generated in the com.aggregator package.
+ * <p>An ObjectFactory allows you to programatically
+ * construct new instances of the Java representation
+ * for XML content. The Java representation of XML
+ * content can consist of schema derived interfaces
+ * and classes representing the binding of schema
+ * type definitions, element declarations and model
+ * groups.  Factory methods for each of these are
  * provided in this class.
- * 
  */
 @XmlRegistry
 public class ObjectFactory {
@@ -30,14 +29,12 @@ public class ObjectFactory {
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.aggregator
-     * 
      */
     public ObjectFactory() {
     }
 
     /**
      * Create an instance of {@link HandlingReportErrors }
-     * 
      */
     public HandlingReportErrors createHandlingReportErrors() {
         return new HandlingReportErrors();
@@ -45,7 +42,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link SubmitReportResponse }
-     * 
      */
     public SubmitReportResponse createSubmitReportResponse() {
         return new SubmitReportResponse();
@@ -53,7 +49,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link HandlingReport }
-     * 
      */
     public HandlingReport createHandlingReport() {
         return new HandlingReport();
@@ -61,7 +56,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link SubmitReport }
-     * 
      */
     public SubmitReport createSubmitReport() {
         return new SubmitReport();
@@ -69,7 +63,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SubmitReport }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://ws.handling.interfaces.dddsample.citerus.se/", name = "submitReport")
     public JAXBElement<SubmitReport> createSubmitReport(SubmitReport value) {
@@ -78,7 +71,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link HandlingReportErrors }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://ws.handling.interfaces.dddsample.citerus.se/", name = "HandlingReportErrors")
     public JAXBElement<HandlingReportErrors> createHandlingReportErrors(HandlingReportErrors value) {
@@ -87,7 +79,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SubmitReportResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://ws.handling.interfaces.dddsample.citerus.se/", name = "submitReportResponse")
     public JAXBElement<SubmitReportResponse> createSubmitReportResponse(SubmitReportResponse value) {

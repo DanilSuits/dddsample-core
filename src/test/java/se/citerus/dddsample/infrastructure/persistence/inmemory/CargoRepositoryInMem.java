@@ -8,9 +8,16 @@ import se.citerus.dddsample.domain.model.handling.HandlingEventRepository;
 import se.citerus.dddsample.domain.model.handling.HandlingHistory;
 import se.citerus.dddsample.domain.model.location.Location;
 
-import static se.citerus.dddsample.domain.model.location.SampleLocations.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
-import java.util.*;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.HELSINKI;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.MELBOURNE;
+import static se.citerus.dddsample.domain.model.location.SampleLocations.STOCKHOLM;
 
 /**
  * CargoRepositoryInMem implement the CargoRepository interface but is a test

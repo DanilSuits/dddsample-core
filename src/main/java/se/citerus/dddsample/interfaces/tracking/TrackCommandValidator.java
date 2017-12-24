@@ -9,13 +9,13 @@ import org.springframework.validation.Validator;
  */
 public final class TrackCommandValidator implements Validator {
 
-  public boolean supports(final Class clazz) {
-    return TrackCommand.class.isAssignableFrom(clazz);
-  }
+    public boolean supports(final Class clazz) {
+        return TrackCommand.class.isAssignableFrom(clazz);
+    }
 
-  public void validate(final Object object, final Errors errors) {
-    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "trackingId", "error.required", "Required");
-  }
+    public void validate(final Object object, final Errors errors) {
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "trackingId", "error.required", "Required");
+    }
 
 }
 

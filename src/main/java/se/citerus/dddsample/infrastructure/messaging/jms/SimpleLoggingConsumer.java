@@ -8,11 +8,11 @@ import javax.jms.MessageListener;
 
 public class SimpleLoggingConsumer implements MessageListener {
 
-  private final Log logger = LogFactory.getLog(SimpleLoggingConsumer.class);
+    private final Log logger = LogFactory.getLog(SimpleLoggingConsumer.class);
 
-  @Override
-  public void onMessage(Message message) {
-    logger.debug("Received JMS message: " + message);
-  }
+    @Override
+    public void onMessage(Message message) {
+        logger.debug("Received JMS message: " + message);
+    }
 
 }

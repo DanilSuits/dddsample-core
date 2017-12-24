@@ -14,79 +14,79 @@ import java.util.Date;
  */
 public class Leg implements ValueObject<Leg> {
 
-  private Voyage voyage;
-  private Location loadLocation;
-  private Location unloadLocation;
-  private Date loadTime;
-  private Date unloadTime;
+    private Voyage voyage;
+    private Location loadLocation;
+    private Location unloadLocation;
+    private Date loadTime;
+    private Date unloadTime;
 
-  public Leg(Voyage voyage, Location loadLocation, Location unloadLocation, Date loadTime, Date unloadTime) {
-    Validate.noNullElements(new Object[] {voyage, loadLocation, unloadLocation, loadTime, unloadTime});
-    
-    this.voyage = voyage;
-    this.loadLocation = loadLocation;
-    this.unloadLocation = unloadLocation;
-    this.loadTime = loadTime;
-    this.unloadTime = unloadTime;
-  }
+    public Leg(Voyage voyage, Location loadLocation, Location unloadLocation, Date loadTime, Date unloadTime) {
+        Validate.noNullElements(new Object[]{voyage, loadLocation, unloadLocation, loadTime, unloadTime});
 
-  public Voyage voyage() {
-    return voyage;
-  }
+        this.voyage = voyage;
+        this.loadLocation = loadLocation;
+        this.unloadLocation = unloadLocation;
+        this.loadTime = loadTime;
+        this.unloadTime = unloadTime;
+    }
 
-  public Location loadLocation() {
-    return loadLocation;
-  }
+    public Voyage voyage() {
+        return voyage;
+    }
 
-  public Location unloadLocation() {
-    return unloadLocation;
-  }
+    public Location loadLocation() {
+        return loadLocation;
+    }
 
-  public Date loadTime() {
-    return new Date(loadTime.getTime());
-  }
+    public Location unloadLocation() {
+        return unloadLocation;
+    }
 
-  public Date unloadTime() {
-    return new Date(unloadTime.getTime());
-  }
+    public Date loadTime() {
+        return new Date(loadTime.getTime());
+    }
 
-  @Override
-  public boolean sameValueAs(final Leg other) {
-    return other != null && new EqualsBuilder().
-      append(this.voyage, other.voyage).
-      append(this.loadLocation, other.loadLocation).
-      append(this.unloadLocation, other.unloadLocation).
-      append(this.loadTime, other.loadTime).
-      append(this.unloadTime, other.unloadTime).
-      isEquals();
-  }
+    public Date unloadTime() {
+        return new Date(unloadTime.getTime());
+    }
 
-  @Override
-  public boolean equals(final Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    @Override
+    public boolean sameValueAs(final Leg other) {
+        return other != null && new EqualsBuilder().
+                append(this.voyage, other.voyage).
+                append(this.loadLocation, other.loadLocation).
+                append(this.unloadLocation, other.unloadLocation).
+                append(this.loadTime, other.loadTime).
+                append(this.unloadTime, other.unloadTime).
+                isEquals();
+    }
 
-    Leg leg = (Leg) o;
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-    return sameValueAs(leg);
-  }
+        Leg leg = (Leg) o;
 
-  @Override
-  public int hashCode() {
-    return new HashCodeBuilder().
-      append(voyage).
-      append(loadLocation).
-      append(unloadLocation).
-      append(loadTime).
-      append(unloadTime).
-      toHashCode();
-  }
+        return sameValueAs(leg);
+    }
 
-  Leg() {
-    // Needed by Hibernate
-  }
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().
+                append(voyage).
+                append(loadLocation).
+                append(unloadLocation).
+                append(loadTime).
+                append(unloadTime).
+                toHashCode();
+    }
 
-  // Auto-generated surrogate key
-  private Long id;
+    Leg() {
+        // Needed by Hibernate
+    }
+
+    // Auto-generated surrogate key
+    private Long id;
 
 }
