@@ -56,7 +56,7 @@ public class Cargo implements Entity<Cargo> {
 
         this.trackingId = trackingId;
         // Cargo origin never changes, even if the route specification changes.
-        // However, at creation, cargo orgin can be derived from the initial route specification.
+        // However, at creation, cargo origin can be derived from the initial route specification.
         this.origin = routeSpecification.origin();
         this.routeSpecification = routeSpecification;
 
