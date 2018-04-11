@@ -86,6 +86,7 @@ public class Delivery implements ValueObject<Delivery> {
         this.calculatedAt = new Date();
         this.lastEvent = lastEvent;
 
+        // https://softwareengineering.stackexchange.com/questions/347411/what-is-the-fix-everything-design-pattern
         this.misdirected = calculateMisdirectionStatus(itinerary);
         this.routingStatus = calculateRoutingStatus(itinerary, routeSpecification);
         this.transportStatus = calculateTransportStatus();
