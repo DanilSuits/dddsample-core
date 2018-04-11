@@ -8,6 +8,9 @@ package com.vocumsineratio.dddsample.cargo.test;
 import com.vocumsineratio.dddsample.cargo.shell.api.Cargo;
 import org.junit.Assert;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -56,7 +59,34 @@ class BookingLifecycle {
             // more clear.
             List itineraries = sut.routes(trackingId);
 
-            Map itinerary = (Map) itineraries.get(0);
+            // TODO: we might should be testing that the itineraries
+            // that are returned satisfy all of the the expected properties
+            // each leg happens after the previous leg
+            // each leg arrival happens after the leg departure
+            // each leg departs from the previous legs arrival
+
+            // we might also want to check that the itinerary satisfies
+            // the constraints that we provided when we last specified the route.
+        }
+
+        {
+            // But for our purposes, we don't actually care whether or not
+            // the specified itinerary is one that was proposed by the model.
+            // We can here in the test describe the itinerary that we should
+            // be using in this test, without worrying about the routing
+            // mechanic.
+            Map itinerary = new HashMap();
+            List legs = new ArrayList();
+            itinerary.put("legs", legs);
+            legs.addAll(
+                    Arrays.asList(
+                            asLeg("V100", "CNHKG", "USNYC", "2009-03-03", "2009-03-09"),
+                            asLeg("V200", "USNYC", "USCHI", "2009-03-10", "2009-03-11"),
+                            asLeg("V200", "USCHI", "SESTO", "2009-03-12", "2009-03-15")
+                    )
+            );
+
+            // TODO:
 
             sut.assignToRoute(trackingId, itinerary);
         }
@@ -82,6 +112,13 @@ class BookingLifecycle {
         sut.registerEvent(trackingId, "2009-03-03", "CNHKG", "LOAD", "V100");
 
         {
+            // TODO: note that these assertions are starting to overfit a
+            // particular itinerary being returned.  In this case, the
+            // assumption is that the first leg of the assigned itinerary
+            // is on this specific voyage, with is specifically going
+            // to New York City.
+
+
             Map delivery = sut.delivery(trackingId);
             Assert.assertEquals("V100", currentVoyage(delivery));
             Assert.assertEquals("CNHKG", lastKnownLocation(delivery));
@@ -116,7 +153,20 @@ class BookingLifecycle {
         {
             List itineraries = sut.routes(trackingId);
 
-            Map itinerary = (Map) itineraries.get(0);
+            // But for our purposes, we don't actually care whether or not
+            // the specified itinerary is one that was proposed by the model.
+            // We can here in the test describe the itinerary that we should
+            // be using in this test, without worrying about the routing
+            // mechanic.
+            Map itinerary = new HashMap();
+            List legs = new ArrayList();
+            itinerary.put("legs", legs);
+            legs.addAll(
+                    Arrays.asList(
+                            asLeg("V300", "JNTKO", "DEHAM", "2009-03-08", "2009-03-12"),
+                            asLeg("V400", "DEHAM", "SESTO", "2009-03-14", "2009-03-17")
+                    )
+            );
 
             sut.assignToRoute(trackingId, itinerary);
         }
@@ -187,6 +237,18 @@ class BookingLifecycle {
             Assert.assertFalse(isMisdirected(delivery));
             Assert.assertNull(nextExpectedActivity(delivery));
         }
+    }
+
+    private Map asLeg(String voyage, String from, String to, String loadTime, String unloadTime) {
+        Map dto = new HashMap();
+
+        dto.put("voyageNumber", voyage);
+        dto.put("from", from);
+        dto.put("to", to);
+        dto.put("loadTime", loadTime);
+        dto.put("unloadTime", unloadTime);
+
+        return dto;
     }
 
     private String currentVoyage(Map delivery) {
