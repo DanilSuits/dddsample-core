@@ -1,5 +1,6 @@
 package se.citerus.dddsample.interfaces.booking.web;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.collections.Factory;
 import org.apache.commons.collections.ListUtils;
 
@@ -61,18 +62,22 @@ public class RouteAssignmentCommand {
             this.toUnLocode = toUnLocode;
         }
 
+        @SuppressFBWarnings("EI_EXPOSE_REP")
         public Date getFromDate() {
             return fromDate;
         }
 
+        @SuppressFBWarnings("EI_EXPOSE_REP2")
         public void setFromDate(Date fromDate) {
             this.fromDate = fromDate;
         }
 
+        @SuppressFBWarnings("EI_EXPOSE_REP")
         public Date getToDate() {
             return toDate;
         }
 
+        @SuppressFBWarnings("EI_EXPOSE_REP2")
         public void setToDate(Date toDate) {
             this.toDate = toDate;
         }

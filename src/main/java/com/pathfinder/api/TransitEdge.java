@@ -1,5 +1,7 @@
 package com.pathfinder.api;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -24,6 +26,7 @@ public final class TransitEdge implements Serializable {
      * @param fromDate
      * @param toDate
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public TransitEdge(final String edge,
                        final String fromNode,
                        final String toNode,
@@ -48,10 +51,12 @@ public final class TransitEdge implements Serializable {
         return toNode;
     }
 
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public Date getFromDate() {
         return fromDate;
     }
 
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public Date getToDate() {
         return toDate;
     }

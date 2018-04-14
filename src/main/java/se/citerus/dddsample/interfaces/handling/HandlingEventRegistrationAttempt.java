@@ -1,5 +1,6 @@
 package se.citerus.dddsample.interfaces.handling;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import se.citerus.dddsample.domain.model.cargo.TrackingId;
@@ -25,6 +26,7 @@ public final class HandlingEventRegistrationAttempt implements Serializable {
     private final HandlingEvent.Type type;
     private final UnLocode unLocode;
 
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public HandlingEventRegistrationAttempt(final Date registrationDate,
                                             final Date completionDate,
                                             final TrackingId trackingId,
@@ -59,6 +61,7 @@ public final class HandlingEventRegistrationAttempt implements Serializable {
         return unLocode;
     }
 
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public Date getRegistrationTime() {
         return registrationTime;
     }

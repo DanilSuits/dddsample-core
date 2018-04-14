@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.handling;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.Validate;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -221,6 +222,7 @@ public final class HandlingEvent implements DomainEvent<HandlingEvent> {
 
 
     // Auto-generated surrogate key
+    @SuppressFBWarnings("UUF_UNUSED_FIELD")
     private Long id;
 
 }

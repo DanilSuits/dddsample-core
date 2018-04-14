@@ -1,5 +1,6 @@
 package se.citerus.dddsample.interfaces.booking.web;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -131,6 +132,7 @@ public final class CargoAdminController {
     }
 
     @RequestMapping(value = "/changeDestination", method = RequestMethod.POST)
+    @SuppressFBWarnings("HRS_REQUEST_PARAMETER_TO_HTTP_HEADER")
     public void changeDestination(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String trackingId = request.getParameter("trackingId");
         String unLocode = request.getParameter("unlocode");

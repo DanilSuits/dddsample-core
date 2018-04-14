@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.cargo;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.Validate;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -26,6 +27,7 @@ import static se.citerus.dddsample.domain.model.cargo.TransportStatus.UNKNOWN;
  * The actual transportation of the cargo, as opposed to
  * the customer requirement (RouteSpecification) and the plan (Itinerary).
  */
+@SuppressFBWarnings("SE_BAD_FIELD")
 public class Delivery implements ValueObject<Delivery> {
 
     private TransportStatus transportStatus;
@@ -136,6 +138,7 @@ public class Delivery implements ValueObject<Delivery> {
     /**
      * @return Estimated time of arrival
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public Date estimatedTimeOfArrival() {
         if (eta != ETA_UNKOWN) {
             return new Date(eta.getTime());

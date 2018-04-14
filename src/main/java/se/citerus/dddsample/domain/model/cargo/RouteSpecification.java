@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.cargo;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.Validate;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -13,6 +14,7 @@ import java.util.Date;
  * Route specification. Describes where a cargo orign and destination is,
  * and the arrival deadline.
  */
+@SuppressFBWarnings("SE_BAD_FIELD")
 public class RouteSpecification extends AbstractSpecification<Itinerary> implements ValueObject<RouteSpecification> {
 
     private Location origin;

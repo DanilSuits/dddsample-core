@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.voyage;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import se.citerus.dddsample.domain.model.location.Location;
 
 import java.lang.reflect.Field;
@@ -124,6 +125,7 @@ public class SampleVoyages {
                     addMovement(HONGKONG, toDate("2008-11-24", "07:00"), toDate("2008-11-28", "13:37")).
                     build();
 
+    @SuppressFBWarnings("MS_MUTABLE_COLLECTION_PKGPROTECT")
     public static final Map<VoyageNumber, Voyage> ALL = new HashMap<>();
 
     static {

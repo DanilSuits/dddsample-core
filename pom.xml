@@ -77,6 +77,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-annotations</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+            <dependency>
                 <groupId>commons-collections</groupId>
                 <artifactId>commons-collections</artifactId>
                 <version>3.2.2</version>
@@ -104,6 +109,10 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+        </dependency>
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
@@ -188,6 +197,28 @@
     </build>
     <profiles>
         <profile>
+            <id>spotbugs</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.github.spotbugs</groupId>
+                            <artifactId>spotbugs-maven-plugin</artifactId>
+                            <version>3.1.0</version>
+                            <dependencies>
+                                <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+                                <dependency>
+                                    <groupId>com.github.spotbugs</groupId>
+                                    <artifactId>spotbugs</artifactId>
+                                    <version>3.1.0</version>
+                                </dependency>
+                            </dependencies>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <profile>
             <id>strict</id>
             <build>
                 <pluginManagement>
@@ -256,10 +287,12 @@
                                 <phase>validate</phase>
                                 <configuration>
                                     <!-- https://github.com/jeremylong/DependencyCheck/issues/1171 -->
+                                    
                                     <cveUrl12Modified>https://nvd.nist.gov/feeds/xml/cve/1.2/nvdcve-modified.xml.gz</cveUrl12Modified>
                                     <cveUrl20Modified>https://nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-modified.xml.gz</cveUrl20Modified>
                                     <cveUrl12Base>https://nvd.nist.gov/feeds/xml/cve/1.2/nvdcve-%d.xml.gz</cveUrl12Base>
                                     <cveUrl20Base>https://nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-%d.xml.gz</cveUrl20Base>
+                                    
                                 </configuration>
                             </execution>
                         </executions>

@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.cargo;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.Validate;
 import se.citerus.dddsample.domain.model.handling.HandlingEvent;
 import se.citerus.dddsample.domain.model.handling.HandlingHistory;
@@ -50,6 +51,7 @@ public class Cargo implements Entity<Cargo> {
     private Itinerary itinerary;
     private Delivery delivery;
 
+    @SuppressFBWarnings("UR_UNINIT_READ")
     public Cargo(final TrackingId trackingId, final RouteSpecification routeSpecification) {
         Validate.notNull(trackingId, "Tracking ID is required");
         Validate.notNull(routeSpecification, "Route specification is required");
@@ -188,6 +190,7 @@ public class Cargo implements Entity<Cargo> {
     }
 
     // Auto-generated surrogate key
+    @SuppressFBWarnings("UUF_UNUSED_FIELD")
     private Long id;
 
 }

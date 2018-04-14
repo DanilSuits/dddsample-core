@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.cargo;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.Validate;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -13,6 +14,7 @@ import se.citerus.dddsample.domain.shared.ValueObject;
  * and can be used to express predictions about what is expected to
  * happen to a cargo in the future.
  */
+@SuppressFBWarnings("SE_BAD_FIELD")
 public class HandlingActivity implements ValueObject<HandlingActivity> {
 
     // TODO make HandlingActivity a part of HandlingEvent too? There is some overlap.

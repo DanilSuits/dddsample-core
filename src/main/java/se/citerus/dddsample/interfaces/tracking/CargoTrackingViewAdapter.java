@@ -1,5 +1,6 @@
 package se.citerus.dddsample.interfaces.tracking;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.springframework.context.MessageSource;
 import se.citerus.dddsample.domain.model.cargo.Cargo;
 import se.citerus.dddsample.domain.model.cargo.Delivery;
@@ -25,6 +26,7 @@ public final class CargoTrackingViewAdapter {
     private final MessageSource messageSource;
     private final Locale locale;
     private final List<HandlingEventViewAdapter> events;
+    @SuppressFBWarnings("SS_SHOULD_BE_STATIC")
     private final String FORMAT = "yyyy-MM-dd hh:mm";
     private final TimeZone timeZone;
 

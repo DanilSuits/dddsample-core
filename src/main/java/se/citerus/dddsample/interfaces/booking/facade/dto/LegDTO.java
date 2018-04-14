@@ -1,5 +1,7 @@
 package se.citerus.dddsample.interfaces.booking.facade.dto;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -23,6 +25,7 @@ public final class LegDTO implements Serializable {
      * @param loadTime
      * @param unloadTime
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public LegDTO(final String voyageNumber, final String from, final String to, Date loadTime, Date unloadTime) {
         this.voyageNumber = voyageNumber;
         this.from = from;
@@ -43,10 +46,12 @@ public final class LegDTO implements Serializable {
         return to;
     }
 
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public Date getLoadTime() {
         return loadTime;
     }
 
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public Date getUnloadTime() {
         return unloadTime;
     }

@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.voyage;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.Validate;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -12,6 +13,7 @@ import java.util.Date;
 /**
  * A carrier movement is a vessel voyage from one location to another.
  */
+@SuppressFBWarnings("SE_BAD_FIELD")
 public final class CarrierMovement implements ValueObject<CarrierMovement> {
 
     private Location departureLocation;
@@ -34,6 +36,7 @@ public final class CarrierMovement implements ValueObject<CarrierMovement> {
      * @param arrivalTime       time of arrival
      */
     // TODO make package local
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public CarrierMovement(Location departureLocation,
                            Location arrivalLocation,
                            Date departureTime,

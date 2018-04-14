@@ -1,5 +1,6 @@
 package se.citerus.dddsample.interfaces.handling.file;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -40,6 +41,7 @@ public class UploadDirectoryScanner extends TimerTask implements InitializingBea
     private ApplicationEvents applicationEvents;
 
     @Override
+    @SuppressFBWarnings("NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE")
     public void run() {
         for (File file : uploadDirectory.listFiles()) {
             try {
@@ -122,6 +124,7 @@ public class UploadDirectoryScanner extends TimerTask implements InitializingBea
     }
 
     @Override
+    @SuppressFBWarnings("RV_RETURN_VALUE_IGNORED_BAD_PRACTICE")
     public void afterPropertiesSet() throws Exception {
         if (uploadDirectory.equals(parseFailureDirectory)) {
             throw new Exception("Upload and parse failed directories must not be the same directory: " + uploadDirectory);

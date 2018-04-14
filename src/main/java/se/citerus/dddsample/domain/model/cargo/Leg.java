@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.cargo;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.Validate;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -12,6 +13,7 @@ import java.util.Date;
 /**
  * An itinerary consists of one or more legs.
  */
+@SuppressFBWarnings("SE_BAD_FIELD")
 public class Leg implements ValueObject<Leg> {
 
     private Voyage voyage;
@@ -20,6 +22,7 @@ public class Leg implements ValueObject<Leg> {
     private Date loadTime;
     private Date unloadTime;
 
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public Leg(Voyage voyage, Location loadLocation, Location unloadLocation, Date loadTime, Date unloadTime) {
         Validate.noNullElements(new Object[]{voyage, loadLocation, unloadLocation, loadTime, unloadTime});
 

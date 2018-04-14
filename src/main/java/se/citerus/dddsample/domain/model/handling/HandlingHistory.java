@@ -1,5 +1,6 @@
 package se.citerus.dddsample.domain.model.handling;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang.Validate;
 import se.citerus.dddsample.domain.shared.ValueObject;
 
@@ -15,6 +16,7 @@ import static java.util.Collections.sort;
 /**
  * The handling history of a cargo.
  */
+@SuppressFBWarnings("SE_BAD_FIELD")
 public class HandlingHistory implements ValueObject<HandlingHistory> {
 
     private final List<HandlingEvent> handlingEvents;

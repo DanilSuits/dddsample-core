@@ -1,5 +1,7 @@
 package se.citerus.dddsample.domain.model.location;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +27,7 @@ public class SampleLocations {
     public static final Location NEWYORK = new Location(new UnLocode("USNYC"), "New York");
     public static final Location DALLAS = new Location(new UnLocode("USDAL"), "Dallas");
 
+    @SuppressFBWarnings("MS_MUTABLE_COLLECTION_PKGPROTECT")
     public static final Map<UnLocode, Location> ALL = new HashMap<UnLocode, Location>();
 
     static {

@@ -1,5 +1,7 @@
 package se.citerus.dddsample.interfaces.booking.facade.dto;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,6 +29,7 @@ public final class CargoRoutingDTO implements Serializable {
      * @param arrivalDeadline
      * @param misrouted
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public CargoRoutingDTO(String trackingId, String origin, String finalDestination, Date arrivalDeadline, boolean misrouted) {
         this.trackingId = trackingId;
         this.origin = origin;
@@ -67,6 +70,7 @@ public final class CargoRoutingDTO implements Serializable {
         return !legs.isEmpty();
     }
 
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public Date getArrivalDeadline() {
         return arrivalDeadline;
     }
