@@ -11,7 +11,12 @@
 
   <!-- JMS messaging -->
 
-  <amq:connectionFactory id="jmsConnectionFactory" brokerURL="vm://localhost?broker.persistent=false&amp;broker.useJmx=false"/>
+  <amq:connectionFactory id="jmsConnectionFactory" brokerURL="vm://localhost?broker.persistent=false&amp;broker.useJmx=false">
+    <amq:trustedPackages>
+        <value>se.citerus.dddsample</value>
+        <value>java.util</value>
+    </amq:trustedPackages>
+  </amq:connectionFactory>
 
   <amq:queue id="cargoHandledQueue" name="CargoHandledQueue" physicalName="CargoHandledQueue"/>
   <amq:queue id="misdirectedCargoQueue" name="MisdirectedCargoQueue" physicalName="MisdirectedCargoQueue"/>
